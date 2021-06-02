@@ -8,10 +8,10 @@ export const Container = styled.View`
 `
 export const Text = styled.Text`
   font-size: 18px;
-  color: blue;
+  color: black;
   font-weight: 500;
 `
 export const Button = styled.TouchableOpacity`
-  background-color: blueviolet;
-  border-color: blue;
+  background-color: pink;
+  border-color: white;
 `

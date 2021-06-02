@@ -2,16 +2,16 @@ import React from "react";
 import { useNavigation } from "@react-navigation/core";
 import { Button, Container, Text } from "../styles/Container";
 
-export default function Welcome() {
+export default function Treinos() { 
   const navigation = useNavigation();
-  function handleGoodBye() {
-    navigation.navigate("GoodBye");
+  function handleResistencia() {  
+    navigation.navigate("Resistencia");
   }
   return (
     <Container>
-      <Text>Seja bem vindo!</Text>
-      <Button onPress={handleGoodBye}>
-        <Text>Tchau</Text>
+      <Text>Treinos / Todos</Text>
+      <Button onPress={handleResistencia}>
+        <Text>Treino de Resistencia</Text>
       </Button>
     </Container>
   );

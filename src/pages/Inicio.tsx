@@ -2,16 +2,16 @@ import React from "react";
 import { useNavigation } from "@react-navigation/core";
 import { Button, Container, Text } from "../styles/Container";
 
-export default function Screen() {
+export default function Inicio() {   
   const navigation = useNavigation();
-  function handleNotification() {
-    navigation.navigate("Notification");
+  function handleSuporte() {           
+    navigation.navigate("Suporte"); 
   }
   return (
     <Container>
-      <Text>Tela!</Text>
-      <Button onPress={handleNotification}>
-        <Text>Notificação</Text>
+      <Text>Seja bem vindo a nossa plataforma 1BETTER!</Text>  
+      <Button onPress={handleSuporte}>
+        <Text>Suporte</Text>   
       </Button>
     </Container>
   );

@@ -2,16 +2,16 @@ import React from "react";
 import { useNavigation } from "@react-navigation/core";
 import { Button, Container, Text } from "../styles/Container";
 
-export default function Home() {
+export default function Receitas() { 
   const navigation = useNavigation();
-  function handleDetails() {
-    navigation.navigate("Details");
+  function handleIscadefrango() {  
+    navigation.navigate("Iscadefrango");
   }
   return (
     <Container>
-      <Text>Página Inicial!</Text>
-      <Button onPress={handleDetails}>
-        <Text>Detalhes</Text>
+      <Text>Receitas/Todas!</Text>
+      <Button onPress={handleIscadefrango}>
+        <Text>Isca de frango</Text>
       </Button>
     </Container>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeStack from "./homeStack.routes";
-import WelcomeStack from "./welcomeStack.routes";
+import ReceitasStack from "./receitasStack.routes";
+import InicioStack from "./inicioStack.routes";
+import TreinosStack from "./treinosStack.routes";
 import Drawer from "./drawer.routes";
 
 const Tab = createBottomTabNavigator();
@@ -9,9 +10,10 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="HomeStack" component={HomeStack} />
-      <Tab.Screen name="WelcomeStack" component={WelcomeStack} />
-      <Tab.Screen name="Drawer" component={Drawer} />
+      <Tab.Screen name="Inicio" component={InicioStack} />
+      <Tab.Screen name="Receitas" component={ReceitasStack} /> 
+      <Tab.Screen name="Treinos" component={TreinosStack} /> 
+      <Tab.Screen name="Usuario" component={Drawer} />
     </Tab.Navigator>
   );
 }
