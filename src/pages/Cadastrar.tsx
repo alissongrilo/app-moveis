@@ -10,22 +10,19 @@ import {
 } from "../styles/Login";
 import { Button, ButtonText } from "../components";
 
-/*Na linha 37, estou voltando para o Início somente para testes,
-o intuito do botão login será autenticar e depois levá-lo para
-uma página específica do usuário*/
-
-export default function Login() {
+export default function Cadastrar() {
   const navigation = useNavigation();
-  function handleCadastrar() {
-    navigation.navigate("Cadastrar");
-  }
-  function handleInicio() {
-    navigation.navigate("Inicio");
+  function handleUsuario() {
+    navigation.navigate("Usuario");
   }
   return (
     <Container>
       <Form>
         <Title>1BETTER</Title>
+        <FormRow>
+          <Label>Nome</Label>
+          <TextInput placeholder="nome"></TextInput>
+        </FormRow>
         <FormRow>
           <Label>E-mail</Label>
           <TextInput placeholder="email"></TextInput>
@@ -34,8 +31,8 @@ export default function Login() {
           <Label>Senha</Label>
           <TextInput placeholder="senha"></TextInput>
         </FormRow>
-        <Button title="Login" onPress={handleInicio} />
-        <ButtonText title="Cadastre-se" onPress={handleCadastrar} />
+        <Button title="Salvar" onPress={handleUsuario} />
+        <ButtonText title="Voltar" onPress={handleUsuario} />
       </Form>
     </Container>
   );

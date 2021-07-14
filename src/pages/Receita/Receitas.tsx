@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/core";
-import { Button, Container, Text } from "../styles/Container";
+import { Button, Container, Text } from "../../styles/Container";
+import { Header } from "../../components";
+import { Message } from "../Home/styles";
 
 export default function Receitas() { 
   const navigation = useNavigation();
@@ -9,10 +11,12 @@ export default function Receitas() {
   }
   return (
     <Container>
-      <Text>Receitas/Todas!</Text>
+      <Message>Receitas/Todas!</Message>
+      
       <Button onPress={handleIscadefrango}>
-        <Text>Isca de frango</Text>
+        <Text>Iscas de frango</Text>
       </Button>
+      
     </Container>
   );
 }
