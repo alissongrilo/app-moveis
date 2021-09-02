@@ -5,9 +5,13 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
+  Alert,
 } from "react-native";
 import { Camera } from "expo-camera";
 import colors from "../styles/colors";
+import * as MediaLibrary from "expo-media-library";
+import * as ImagePicker from "expo-image-picker";
+
 const tag = "[CAMERA]";
 export default function App() {
   const [hasPermission, setHasPermission] = useState<any>(null);
@@ -32,7 +36,26 @@ export default function App() {
     setPreviewVisible(true);
     setCapturedImage(photo);
   };
-  const __savePhoto = async () => {};
+  const __savePhoto = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const permission = await MediaLibrary.requestPermissionsAsync();
+    if (permission.granted) {
+      try {
+        const asset = await MediaLibrary.createAssetAsync(capturedImage.uri);
+        MediaLibrary.createAlbumAsync("Images", asset, false)
+          .then(() => {
+            Alert.alert("Imagem salva com sucesso!");
+          })
+          .catch(() => {
+            Alert.alert("Erro ao salvar a imagem!");
+          });
+      } catch (error) {
+        Alert.alert(error);
+      }
+    } else {
+      Alert.alert("Sem permissão para acessar os arquivos");
+    }
+  };
   return (
     <View style={styles.container}>
       {startOver ? (
@@ -57,13 +80,13 @@ export default function App() {
                     onPress={() => setPreviewVisible(false)}
                     style={styles.buttonPreviewVisible}
                   >
-                    <Text style={styles.textPreviewVisible}>nova foto</Text>
+                    <Text style={styles.textPreviewVisible}>Nova foto</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={__savePhoto}
                     style={styles.buttonSavePhoto}
                   >
-                    <Text style={styles.textPreviewVisible}>salvar a foto</Text>
+                    <Text style={styles.textPreviewVisible}>Salvar</Text>
                   </TouchableOpacity>
                 </View>
               </View>

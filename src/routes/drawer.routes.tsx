@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Usuario, Cadastrar, Camera } from "../pages";
-import { AntDesign, FontAwesome5  } from '@expo/vector-icons'; 
+import { Usuario, Cadastrar, Camera, File } from "../pages";
+import { AntDesign, FontAwesome5, FontAwesome } from '@expo/vector-icons'; 
 
 const Drawer = createDrawerNavigator();
 
@@ -18,6 +18,10 @@ export default function App() {
 
       <Drawer.Screen name="Camera" component={Camera} options={{
         drawerIcon: () => <AntDesign name="camera" size={24} color="black" />}}/>
+
+      <Drawer.Screen name="File" component={File} options={{
+        drawerIcon: () => <FontAwesome name="file" size={24} color="black" />}}/>
+
     </Drawer.Navigator>
   );
 }
