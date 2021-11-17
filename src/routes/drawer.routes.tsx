@@ -1,6 +1,6 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { Usuario, Cadastrar, Camera, File } from "../pages";
+import { Usuario, Cadastrar, Camera, File, Sair } from "../pages";
 import { AntDesign, FontAwesome5, FontAwesome } from '@expo/vector-icons'; 
 
 const Drawer = createDrawerNavigator();

@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-native";
 import { Camera } from "expo-camera";
-import colors from "../styles/colors";
+import colors from "../../styles/colors";
 import * as MediaLibrary from "expo-media-library";
 import * as ImagePicker from "expo-image-picker";
 
