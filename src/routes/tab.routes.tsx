@@ -17,7 +17,7 @@ export default function App() {
           <FontAwesome5 name="home" size={24} color="black" />
         )
       }}/>
-      
+
       <Tab.Screen name="Receitas" component={ReceitasStack} options={{
         tabBarLabel: "Receitas",
         tabBarIcon: () => (
