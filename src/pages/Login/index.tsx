@@ -51,11 +51,7 @@ export default function Login({ navigation }: LoginTypes) {
     }
   }
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-  }, []);
+
 
   return (
     <>
