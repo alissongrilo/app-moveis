@@ -51,6 +51,9 @@ export default function Login({ navigation }: LoginTypes) {
     }
   }
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
 
   return (
